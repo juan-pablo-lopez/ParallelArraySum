@@ -45,7 +45,7 @@ int main() {
     std::vector<float> first = createArray(elements);
     std::vector<float> second = createArray(elements);
 
-    std::cout << "\n\nExecution results:\n\n";
+    std::cout << "\nExecution results:\n\n";
 
     // Serial execution
     std::vector<float> serial = serialExecution(first, second);
@@ -143,7 +143,7 @@ std::vector<float> parallelExecution(const std::vector<float>& first, const std:
     std::chrono::duration<double, std::nano> executionTime = end - start;
 
     // Print the duration
-    std::cout << "Parallel execution duration: " << static_cast<long>(executionTime.count()) << " nanoseconds.\n";
+    std::cout << "Parallel execution duration: " << static_cast<long>(executionTime.count()) << " nanoseconds.\n\n";
 
     // Return the new array
     return result;

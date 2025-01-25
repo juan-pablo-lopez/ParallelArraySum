@@ -45,14 +45,16 @@ int main() {
     std::vector<float> first = createArray(elements);
     std::vector<float> second = createArray(elements);
 
+    std::cout << "\n\nExecution results:\n\n";
+
     // Serial execution
     std::vector<float> serial = serialExecution(first, second);
 
     // Parallel execution
     std::vector<float> parallel = parallelExecution(first, second);
 
-    // Print the first 10 values for each array:
-    for (int i = 0; i < 10; i++) {
+    // Print the first values for each array:
+    for (int i = 0; i < 25; i++) {
         std::cout << "First value: " << std::fixed << std::setprecision(2) << first[i];
         std::cout << " | Second value: " << std::fixed << std::setprecision(2) << second[i];
         std::cout << " | Serial result: " << std::fixed << std::setprecision(2) << serial[i];
@@ -108,7 +110,7 @@ std::vector<float> serialExecution(const std::vector<float>& first, const std::v
     std::chrono::duration<double, std::nano> executionTime = end - start;
 
     // Print the duration
-    std::cout << "Serial execution duration: " << static_cast<long>(executionTime.count()) << " nanoseconds.\n\n";
+    std::cout << "Serial execution duration: " << static_cast<long>(executionTime.count()) << " nanoseconds.\n";
 
     // Return the new array
     return result;
@@ -141,7 +143,7 @@ std::vector<float> parallelExecution(const std::vector<float>& first, const std:
     std::chrono::duration<double, std::nano> executionTime = end - start;
 
     // Print the duration
-    std::cout << "Parallel execution duration: " << static_cast<long>(executionTime.count()) << " nanoseconds.\n\n";
+    std::cout << "Parallel execution duration: " << static_cast<long>(executionTime.count()) << " nanoseconds.\n";
 
     // Return the new array
     return result;
